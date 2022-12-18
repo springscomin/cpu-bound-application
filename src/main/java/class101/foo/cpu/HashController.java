@@ -13,7 +13,7 @@ public class HashController {
 
     @RequestMapping("/hash/{input}")
     public String getDigest(@PathVariable("input") String input) throws NoSuchAlgorithmException {
-        for(int i = 0; i < 100_000; i++) {
+        for (int i = 0; i < 100_000; i++) {
             input = getMD5Digest(input);
         }
         return input;
@@ -22,6 +22,11 @@ public class HashController {
     @RequestMapping("/hello")
     public String hello() {
         return "hello";
+    }
+
+    @RequestMapping("/hello2")
+    public String hello2() {
+        return "hello2";
     }
 
     private String getMD5Digest(String input) throws NoSuchAlgorithmException {
